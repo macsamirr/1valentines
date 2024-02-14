@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Letter to the LOML</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="style.css" rel="stylesheet">
+	<script src="jquery.js"></script>
+	<script src="garden.js"></script>
+	<script src="functions.js"></script>
+</head>
+
+<body>
+	
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments"></span><br/>
+			<span class="comments">Hey baby,</span><br/>
+			<span class="comments">I know it's weird and we aren't on good terms right now but i just want to wish you a happy valentines</span><br/>
+			<span class="comments">I love you so much and you deserve so much more from me and from anyone who loves you</span><br/>
+			
+			<span class="comments"> Words can't express how much you mean to me. You're not just someone I care about; you're someone I love. </span><br/>
+			
+			<span class="comments">You make me a better person each and every day, and I can't imagine me losing you </span><br/>
+			
+			<span class="comments">I just wanted to take a moment to appreciate how amazing you are.</span><br/>
+			
+			<span class="comments">You're kind, caring, and always know how to make me smile. </span><br/>
+			
+			<span class="comments">You have a way of making everyone feel special, and I'm so grateful to have you in my life.
+			</span><br/>
+			
+			<span class="comments"> You possess a rare combination of grace, intelligence, and compassion that never fails to amaze me</span><br/>
+			
+			<span class="comments">Whenever you go through shit, i'll always be there for you as your man and best friend. Never hesitate to call me</span><br/>
+			
+			<span class="comments">So here's to you, Natasha </span><br/>
+			
+			<span class="comments"> You're a beautiful soul, a cherished friend, and a beacon of love and light in this world.</span><br/>
+			
+			<span class="comments">May your days be filled with endless joy, laughter, and love, for you deserve nothing less.</span><br/>
+			<span class="comments">HAPPY VALENTINES BABY</span><br/>
+			<span class="comments">LOVE YOU</span><br/>
+			<span class="comments">Your one and only dickhead,</span><br/>
+			<br>
+			<br>
+			<span class="comments">Mac</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Natasha, ever since i laid my eyes on you, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love you baby<br/>
+					<div class="signature">Mac, your Dickhead </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2023, 7, 28);
+	together.setHours(24);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
